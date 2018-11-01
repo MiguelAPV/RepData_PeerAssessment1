@@ -21,6 +21,7 @@ qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
 mean(total.steps, na.rm=TRUE)
 median(total.steps, na.rm=TRUE)
 ```
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
 
 ## What is the average daily activity pattern?
 ```{r}
@@ -65,7 +66,7 @@ fill.value <- function(steps, interval) {
 filled.data <- data
 filled.data$steps <- mapply(fill.value, filled.data$steps, filled.data$interval)
 ```
-Now, using the filled data set, let's make a histogram of the total number of steps taken each day and calculate the mean and median total number of steps.
+Using the filled data set, let's make a histogram of the total number of steps taken each day and calculate the mean and median total number of steps.
 
 ```{r}
 total.steps <- tapply(filled.data$steps, filled.data$date, FUN=sum)
@@ -74,9 +75,9 @@ mean(total.steps)
 median(total.steps)
 ```
 
-Mean and median values are higher after imputing missing data. The reason is
-that in the original data, there are some days with `steps` values `NA` for 
-any `interval`. The total number of steps taken in such days are set to 0s by
+Mean and median values are higher after imputing missing data. 
+
+The total number of steps taken in such days are set to 0s by
 default. However, after replacing missing `steps` values with the mean `steps`
 of associated `interval` value, these 0 values are removed from the histogram
 of total number of steps taken each day.
