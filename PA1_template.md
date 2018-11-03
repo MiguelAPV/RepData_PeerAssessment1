@@ -21,7 +21,7 @@ qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
 mean(total.steps, na.rm=TRUE)
 median(total.steps, na.rm=TRUE)
 ```
-![](C:/Users/migue/Documents/Coursera/imagenrep/repres1.png)
+![](C:/Users/migue/Documents/Coursera/imagenrep/repres1.png)<!-- -->
 
 ## What is the average daily activity pattern?
 ```{r}
