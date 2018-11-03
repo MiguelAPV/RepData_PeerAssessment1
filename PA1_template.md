@@ -21,7 +21,7 @@ qplot(total.steps, binwidth=1000, xlab="total number of steps taken each day")
 mean(total.steps, na.rm=TRUE)
 median(total.steps, na.rm=TRUE)
 ```
-![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
+![Alt text](C:\Users\migue\Documents\Coursera\imagenrep\repres1.png)
 
 ## What is the average daily activity pattern?
 ```{r}
@@ -33,6 +33,8 @@ ggplot(data=averages, aes(x=interval, y=steps)) +
     xlab("5-minute interval") +
     ylab("average number of steps taken")
 ```
+
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
 
 On average across all the days in the dataset, the 5-minute interval contains
 the maximum number of steps?
@@ -75,6 +77,8 @@ mean(total.steps)
 median(total.steps)
 ```
 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6.png)
+
 Mean and median values are higher after imputing missing data. 
 
 The total number of steps taken in such days are set to 0s by
@@ -107,3 +111,5 @@ averages <- aggregate(steps ~ interval + day, data=filled.data, mean)
 ggplot(averages, aes(interval, steps)) + geom_line() + facet_grid(day ~ .) +
     xlab("5-minute interval") + ylab("Number of steps")
 ```
+
+![](PA1_template_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
